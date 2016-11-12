@@ -1,10 +1,33 @@
 
 const TimersDashboard = React.createClass({
+  getInitialState: function(){
+    return {
+      timers: [
+        {
+          title: 'RESTful APIs',
+          project: 'Truly LA',
+          id: uuid.v4(),
+          elapsed: 23424,
+          runningSince: Date.now()
+        },
+        {
+          title: 'AJAX calls',
+          project: 'Truly LA',
+          id: uuid.v4(),
+          elapsed: 3452,
+          runningSince: null
+        }
+      ]
+    }
+  },
+
   render: function(){
     return (
       <div className='ui three column centered grid'>
         <div className='column'>
-          <EditableTimerList />
+          <EditableTimerList
+            timers={this.state.timers}
+          />
           <ToggleableTimerForm
             isOpen={true}
           />
@@ -16,22 +39,22 @@ const TimersDashboard = React.createClass({
 
 const EditableTimerList = React.createClass({
   render: function(){
+    const timers = this.props.timers.map((timer) => {
+      return (
+        <EditableTimer
+          key={timer.id}
+          id={timer.id}
+          title={timer.title}
+          project={timer.project}
+          elapsed={timer.elapsed}
+          runningSince={timer.runningSince}
+        />
+      )
+    });
+
     return (
       <div id='timers'>
-        <EditableTimer
-          title='Title 1'
-          project='Project 1'
-          elapsed='100'
-          runningSince={null}
-          editFormOpen={false}
-        />
-        <EditableTimer
-          title='Title 2'
-          project='Project 1'
-          elapsed='50'
-          runningSince={null}
-          editFormOpen={true}
-        />
+        {timers}
       </div>
     )
   }
