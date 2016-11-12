@@ -82,3 +82,17 @@ const TimerForm = React.class({
     )
   }
 });
+
+const ToggleableTimerForm = React.class({
+  render: function(){
+    if (this.props.isOpen) {
+      return (
+        <TimerForm />
+      )
+    } else {
+      <div className='ui basic content center aligned segment'>
+        <button><i className='plus icon'></i></button>
+      </div>
+    }
+  }
+});
