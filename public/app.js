@@ -92,9 +92,13 @@ const ToggleableTimerForm = React.createClass({
         <TimerForm />
       )
     } else {
-      <div className='ui basic content center aligned segment'>
-        <button><i className='plus icon'></i></button>
-      </div>
+      return (
+        <div className='ui basic content center aligned segment'>
+          <button className='ui basic button icon'>
+            <i className='plus icon'></i>
+          </button>
+        </div>
+      )
     }
   }
 });
