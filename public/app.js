@@ -37,7 +37,7 @@ const EditableTimerList = React.class({
   }
 });
 
-const EditableTimer = React.create({
+const EditableTimer = React.class({
   render: function(){
     if (this.props.editFormOpen){
       return (
