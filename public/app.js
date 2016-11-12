@@ -65,17 +65,19 @@ const TimerForm = React.createClass({
     return (
       <div className='ui centered card'>
         <div className='content'>
-          <div className='field'>
-            <label>Title</label>
-            <input type='text' defaultValue={this.props.title} />
-          </div>
-          <div className='field'>
-            <label>Project</label>
-            <input type='text' defaultValue={this.props.project} />
-          </div>
-          <div className='ui two bottom attached buttons'>
-            <button className='ui basic blue button'>{submitText}</button>
-            <button className='ui basic red button'>Cancel</button>
+          <div className='ui form'>
+            <div className='field'>
+              <label>Title</label>
+              <input type='text' defaultValue={this.props.title} />
+            </div>
+            <div className='field'>
+              <label>Project</label>
+              <input type='text' defaultValue={this.props.project} />
+            </div>
+            <div className='ui two bottom attached buttons'>
+              <button className='ui basic blue button'>{submitText}</button>
+              <button className='ui basic red button'>Cancel</button>
+            </div>
           </div>
         </div>
       </div>
@@ -102,7 +104,7 @@ const Timer = React.createClass({
     const elapsedString = helpers.renderElapsedString(this.props.elapsed);
     return (
       <div className='ui centered card'>
-        <div className='card'>
+        <div className='content'>
           <div className='header'>
             {this.props.title}
           </div>
