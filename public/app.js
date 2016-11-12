@@ -13,3 +13,26 @@ const TimersDashboard = React.class({
     );
   }
 });
+
+const EditableTimerList = React.class({
+  render: function(){
+    return (
+      <div id='timers'>
+        <EditableTimer
+          title='Title 1'
+          project='Project 1'
+          elapsed='100'
+          runningSince={null}
+          editForm={false}
+        />
+        <EditableTimer
+          title='Title 2'
+          project='Project 1'
+          elapsed='50'
+          runningSince={null}
+          editForm={true}
+        />
+      </div>
+    )
+  }
+});
