@@ -1,5 +1,5 @@
 
-const TimersDashboard = React.class({
+const TimersDashboard = React.createClass({
   render: function(){
     return (
       <div className='ui three column centered grid'>
@@ -14,7 +14,7 @@ const TimersDashboard = React.class({
   }
 });
 
-const EditableTimerList = React.class({
+const EditableTimerList = React.createClass({
   render: function(){
     return (
       <div id='timers'>
@@ -37,7 +37,7 @@ const EditableTimerList = React.class({
   }
 });
 
-const EditableTimer = React.class({
+const EditableTimer = React.createClass({
   render: function(){
     if (this.props.editFormOpen){
       return (
@@ -59,7 +59,7 @@ const EditableTimer = React.class({
   }
 });
 
-const TimerForm = React.class({
+const TimerForm = React.createClass({
   render: function(){
     const submitText = this.props.title ? 'Update' : 'Create';
     return (
@@ -83,7 +83,7 @@ const TimerForm = React.class({
   }
 });
 
-const ToggleableTimerForm = React.class({
+const ToggleableTimerForm = React.createClass({
   render: function(){
     if (this.props.isOpen) {
       return (
@@ -97,7 +97,7 @@ const ToggleableTimerForm = React.class({
   }
 });
 
-const Timer = React.class({
+const Timer = React.createClass({
   render: function(){
     const elapsedString = helpers.renderElapsedString(this.props.elapsed);
     return (
@@ -128,3 +128,8 @@ const Timer = React.class({
     )
   }
 });
+
+ReactDOM.render(
+  <TimersDashboard />,
+  document.getElementById('content')
+);
