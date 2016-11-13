@@ -61,10 +61,16 @@ const EditableTimerList = React.createClass({
 });
 
 const EditableTimer = React.createClass({
+  getInitialState: function(){
+    return {
+      editFormOpen: false
+    }
+  }
   render: function(){
-    if (this.props.editFormOpen){
+    if (this.state.editFormOpen){
       return (
         <TimerForm
+          id={this.props.id}
           title={this.props.title}
           project={this.props.project}
         />
@@ -72,6 +78,7 @@ const EditableTimer = React.createClass({
     } else {
       return (
         <Timer
+          id={this.props.id}
           title={this.props.title}
           project={this.props.project}
           elapsed={this.props.elapsed}
