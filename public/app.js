@@ -65,7 +65,7 @@ const EditableTimer = React.createClass({
     return {
       editFormOpen: false
     }
-  }
+  },
   render: function(){
     if (this.state.editFormOpen){
       return (
